@@ -7,16 +7,16 @@ import {
 } from 'react-router-dom'
 
 function App() {
-  return (
-    <Router>
-      <div >
-        <Routes>
-          <Route path="/" element={<PokeCard />}>
-          </Route>
-        </Routes>
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div >
+                <Routes>
+                    <Route path="/" element={<PokeCard />}>
+                    </Route>
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
 
 const PokeCard = () => {
     const [pokecard, setPokecard] = useState([])
@@ -13,6 +12,7 @@ const PokeCard = () => {
     const pokeapi = async() => {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100', {method: 'GET'})
         const apiresponse = await response.json()
+        console.log(apiresponse)
         setPokecard(apiresponse.results) 
        
     }

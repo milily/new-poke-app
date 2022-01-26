@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState} from "react";
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import axios from "axios";
+import PokeImage from './PokeImage'
 
 const SingleCard = ({pokename, pokeurl}) => {
 
@@ -25,11 +25,7 @@ const SingleCard = ({pokename, pokeurl}) => {
     return(
         <Fragment>
             <Card >
-                <CardMedia
-                    component="img"
-                    image={pokeInfo.sprites.other.home.front_default}
-                    alt="green iguana"
-                />
+                <PokeImage urlSprite={pokeInfo.sprites}/>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {pokename}
