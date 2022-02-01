@@ -15,6 +15,7 @@ const SingleCard = ({pokename, pokeurl}) => {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokename}`)
                 .then((response) => {
                     const apiresponse = response.data;
+                    console.log(apiresponse)
                     setPokeInfo(apiresponse);
                 }
             )
@@ -34,7 +35,7 @@ const SingleCard = ({pokename, pokeurl}) => {
                             {pokename}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            {pokeurl}
+                            {console.log(pokeInfo.types)}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
