@@ -16,7 +16,7 @@ const PokeCard = () => {
     const pokeapi = async() => {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100', {method: 'GET'})
         const apiresponse = await response.json()
-        setPokecard(apiresponse.results) 
+        setPokecard(apiresponse.results)
         setIsLoading(false)
     }
 
