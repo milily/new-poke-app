@@ -1,4 +1,5 @@
 import PokeCard from './components/PokeCard';
+import './index.css';
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,7 +9,7 @@ import {
 function App() {
     return (
         <Router>
-            <div >
+            <div id='container'>
                 <Routes>
                     <Route path="/" element={<PokeCard />}>
                     </Route>

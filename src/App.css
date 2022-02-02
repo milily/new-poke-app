@@ -1,3 +1,7 @@
+#container{
+    display: flex;
+    height: 100vh;
+}
 .pokeball{
     animation: loadingEffect 1s infinite;
 }

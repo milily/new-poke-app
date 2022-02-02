@@ -22,19 +22,24 @@ const PokeCard = () => {
 
     if(isLoading){
         return(
-            <img
-                width={'70'}
-                src={pokeball}
-                alt={'pokemon logo'}
-                className="pokeball"
-            />
+            <Grid container sx={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Grid item lg={2} >
+                    <img
+                        sx={{ alignItems: 'center' }}
+                        width={'200'}
+                        src={pokeball}
+                        alt={'pokemon logo'}
+                        className="pokeball"
+                    />
+                </Grid>
+            </Grid>
         )
     }
 
     return(
         <Fragment>
-            <NavBar />
             <Grid container sx={{ justifyContent: 'center' }}>
+                <NavBar />
                 <Grid item xs={10}>
                     <Grid container spacing={2}>
                         {
