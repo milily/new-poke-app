@@ -20,7 +20,6 @@ const SingleCard = ({pokename}) => {
                 .then((response) => {
                     const apiresponse = response.data;
                     setPokeInfo(apiresponse);
-                    console.log(apiresponse)
                     setIsLoading(false)
                 }
             )
@@ -45,17 +44,36 @@ const SingleCard = ({pokename}) => {
                 <CardActionArea>
                     <PokeImage urlSprite={pokeInfo.sprites}/>
                     <CardContent>
-                        <Typography gutterBottom sx={{ fontSize: 14, fontFamily: 'Monospace' }} color="text.secondary" component="div">
+                        <Typography 
+                            gutterBottom 
+                            sx={{ fontSize: 14, fontFamily: 'Monospace' }} 
+                            color="text.secondary" 
+                            component="div">
                             #{pokeInfo.id.toString().padStart(3, '0')}
                         </Typography>
-                        <Typography gutterBottom sx={{ fontSize: 20, fontFamily: 'Monospace', textTransform: 'uppercase' }} color="text.secondary" variant="h5" component="div">
+                        <Typography 
+                            gutterBottom 
+                            sx={{ fontSize: 20, fontFamily: 'Monospace', textTransform: 'uppercase' }} 
+                            color="text.secondary" 
+                            variant="h5" 
+                            component="div">
                             {pokename}
                         </Typography>
-                        <Typography component={'span'} variant="body2" color="text.secondary">
+                        <Typography 
+                            component={'span'} 
+                            variant="body2" 
+                            color="text.secondary">
                             {pokeInfo.types.map((pokeType,index) => {
                                 return (
-                                    <Chip key={index} style={{marginRight: 5}} label={pokeType.type.name} size="small" color="primary" variant="outlined" />
-                                )})
+                                    <Chip 
+                                        key={index} 
+                                        style={{marginRight: 5}} 
+                                        label={pokeType.type.name} 
+                                        size="small" 
+                                        color="primary" 
+                                        variant="outlined" />
+                                    )
+                                })
                             }
                         </Typography>
                     </CardContent>
