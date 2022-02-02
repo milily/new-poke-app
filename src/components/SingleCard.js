@@ -6,6 +6,7 @@ import Chip from '@mui/material/Chip';
 import { CardActionArea } from '@mui/material';
 import axios from "axios";
 import PokeImage from './PokeImage'
+import PokeModal from "./PokeDialog";
 import pokeball from '../assets/pokeball.png'
 import '../../src/App.css'
 
@@ -13,6 +14,14 @@ const SingleCard = ({pokename}) => {
 
     const [pokeInfo, setPokeInfo] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => {
+        if(!open){
+            setOpen(true)
+        }
+    };
+    const handleClose = () => { setOpen(false) };
+
 
     useEffect(()=>{
         const singlePokeInfo = () => {
@@ -41,8 +50,9 @@ const SingleCard = ({pokename}) => {
     return(
         <Fragment>
             <Card>
-                <CardActionArea>
+                <CardActionArea onClick={handleOpen}>
                     <PokeImage urlSprite={pokeInfo.sprites}/>
+                    <PokeModal open={open} close={handleClose}/>
                     <CardContent>
                         <Typography 
                             gutterBottom 
