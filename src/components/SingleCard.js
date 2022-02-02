@@ -47,7 +47,7 @@ const SingleCard = ({pokename}) => {
                             {pokename}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            {console.log(pokeInfo.types)}
+                            {pokeInfo.types.map(pokeType => pokeType.type.name)}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
