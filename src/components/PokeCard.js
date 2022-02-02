@@ -2,9 +2,12 @@ import React, { Fragment, useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 import NavBar from "./NavBar";
 import Grid from '@mui/material/Grid';
+import pokeball from '../assets/pokeball.png'
 
 const PokeCard = () => {
     const [pokecard, setPokecard] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    
 
     useEffect(()=>{
         pokeapi()
@@ -14,8 +17,20 @@ const PokeCard = () => {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100', {method: 'GET'})
         const apiresponse = await response.json()
         setPokecard(apiresponse.results) 
-       
+        setIsLoading(false)
     }
+
+    if(isLoading){
+        return(
+            <img
+                width={'70'}
+                src={pokeball}
+                alt={'pokemon logo'}
+                className="pokeball"
+            />
+        )
+    }
+
     return(
         <Fragment>
             <NavBar />
@@ -25,7 +40,7 @@ const PokeCard = () => {
                         {
                             pokecard.map((card, index) =>{
                                 return(
-                                    <Grid item key={index} lg={2} xs={12} md={4} sm={6}>
+                                    <Grid style={{marginTop: 40}} item key={index} lg={2} xs={12} md={4} sm={6}>
                                         <SingleCard
                                             container
                                             uniqueKey={index} 

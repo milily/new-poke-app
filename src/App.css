@@ -1,1 +1,11 @@
-
+.pokeball{
+    animation: loadingEffect 1s infinite;
+}
+@keyframes loadingEffect {
+    0%{
+        transform: rotate(0) scale(.5);
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}

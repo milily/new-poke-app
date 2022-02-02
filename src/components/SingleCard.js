@@ -5,25 +5,37 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import axios from "axios";
 import PokeImage from './PokeImage'
+import pokeball from '../assets/pokeball.png'
+import '../../src/App.css'
 
-const SingleCard = ({pokename, pokeurl}) => {
+const SingleCard = ({pokename}) => {
 
     const [pokeInfo, setPokeInfo] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(()=>{
         const singlePokeInfo = () => {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokename}`)
                 .then((response) => {
                     const apiresponse = response.data;
-                    console.log(apiresponse)
                     setPokeInfo(apiresponse);
+                    setIsLoading(false)
                 }
             )
         }
         singlePokeInfo()
     },[pokename])
 
-    
+    if(isLoading){
+        return(
+            <img
+                width={'70'}
+                src={pokeball}
+                alt={'pokemon logo'}
+                className="pokeball"
+            />
+        )
+    }
 
     return(
         <Fragment>
