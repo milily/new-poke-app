@@ -2,6 +2,9 @@ import React from "react";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
 const style = {
     position: 'absolute',
@@ -15,8 +18,8 @@ const style = {
     p: 4,
 };
 
-const PokeModal = ({open, close}) => {
-
+const PokeModal = ({open, close, abilities}) => {
+    console.log("abilities", abilities)
     return (
         <div>
             <Modal
@@ -27,11 +30,24 @@ const PokeModal = ({open, close}) => {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
+                        Habilidades:
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    <List >
+                        {abilities.map((ability,index) => {
+                            return(
+                                <ListItem key={index}>
+                                    <ListItemText
+                                        primary={ability.ability.name}
+                                    />
+                                </ListItem>
+                            )
+                        })}
+                        
+                        
+                    </List>
+                    {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
+                    </Typography> */}
                 </Box>
             </Modal>
         </div>

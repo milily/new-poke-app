@@ -30,6 +30,7 @@ const SingleCard = ({pokename}) => {
                     const apiresponse = response.data;
                     setPokeInfo(apiresponse);
                     setIsLoading(false)
+                    console.log(apiresponse)
                 }
             )
         }
@@ -52,7 +53,10 @@ const SingleCard = ({pokename}) => {
             <Card>
                 <CardActionArea onClick={handleOpen}>
                     <PokeImage urlSprite={pokeInfo.sprites}/>
-                    <PokeModal open={open} close={handleClose}/>
+                    <PokeModal 
+                        open={open} 
+                        close={handleClose}
+                        abilities={pokeInfo.abilities}/>
                     <CardContent>
                         <Typography 
                             gutterBottom 
