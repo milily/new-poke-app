@@ -3,9 +3,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Chip from '@mui/material/Chip';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 
 const style = {
     position: 'absolute',
@@ -20,10 +17,9 @@ const style = {
 };
 
 const PokeModal = ({open, close, abilities, urlSprite}) => {
-    // console.log("sprites", urlSprite)
+
     return (
         <div>
-            
             <Modal
                 open={open}
                 onClose={close}
@@ -35,13 +31,11 @@ const PokeModal = ({open, close, abilities, urlSprite}) => {
                         <img
                             width={'120'}
                             src={urlSprite.back_default}
-                            alt={'pokemon'}
-                        />
+                            alt={'pokemon'}/>
                         <img
                             width={'120'}
                             src={urlSprite.front_default}
-                            alt={'pokemon'}
-                        />
+                            alt={'pokemon'}/>
                     </div>
                     <Typography 
                         id="modal-modal-title" 
@@ -68,23 +62,6 @@ const PokeModal = ({open, close, abilities, urlSprite}) => {
                             })
                         }
                     </Typography>
-                    {/* <div style={{display: 'flex', justifyContent: 'center'}}>
-                        
-                        <List >
-                            {abilities.map((ability,index) => {
-                                return(
-                                    <ListItem key={index}>
-                                        <ListItemText
-                                            primary={ability.ability.name}
-                                        />
-                                    </ListItem>
-                                )
-                            })}
-                        </List>
-                    </div> */}
-                    {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography> */}
                 </Box>
             </Modal>
             
