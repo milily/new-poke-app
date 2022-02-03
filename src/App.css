@@ -1,3 +1,6 @@
+body{
+    background: ffca00 url('./assets/pika-wallpaper.jpeg') center bottom no-repeat;
+}
 #container{
     display: flex;
     height: 100vh;

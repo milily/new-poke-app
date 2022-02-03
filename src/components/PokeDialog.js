@@ -29,11 +29,11 @@ const PokeModal = ({open, close, abilities, urlSprite}) => {
                 <Box sx={style}>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         <img
-                            width={'120'}
+                            width={'180'}
                             src={urlSprite.back_default}
                             alt={'pokemon'}/>
                         <img
-                            width={'120'}
+                            width={'180'}
                             src={urlSprite.front_default}
                             alt={'pokemon'}/>
                     </div>
@@ -52,7 +52,7 @@ const PokeModal = ({open, close, abilities, urlSprite}) => {
                             return (
                                 <Chip 
                                     key={index} 
-                                    style={{marginRight: 5}} 
+                                    style={{marginRight: 5, marginTop: 5}} 
                                     label={ability.ability.name} 
                                     size="small" 
                                     color="success" 
@@ -64,7 +64,6 @@ const PokeModal = ({open, close, abilities, urlSprite}) => {
                     </Typography>
                 </Box>
             </Modal>
-            
         </div>
     );
 }
