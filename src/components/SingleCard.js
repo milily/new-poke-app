@@ -56,7 +56,8 @@ const SingleCard = ({pokename}) => {
                     <PokeModal 
                         open={open} 
                         close={handleClose}
-                        abilities={pokeInfo.abilities}/>
+                        abilities={pokeInfo.abilities}
+                        urlSprite={pokeInfo.sprites}/>
                     <CardContent>
                         <Typography 
                             gutterBottom 
