@@ -1,5 +1,5 @@
 body{
-    background: ffca00 url('./assets/pika-wallpaper.jpeg') center bottom no-repeat;
+    background: radial-gradient(#2E86C1, transparent);
 }
 #container{
     display: flex;
