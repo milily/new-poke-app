@@ -29,11 +29,11 @@ const PokeModal = ({open, close, abilities, urlSprite}) => {
                 <Box sx={style}>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         <img
-                            width={'180'}
+                            width={'200'}
                             src={urlSprite.back_default}
                             alt={'pokemon'}/>
                         <img
-                            width={'180'}
+                            width={'200'}
                             src={urlSprite.front_default}
                             alt={'pokemon'}/>
                     </div>

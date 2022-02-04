@@ -50,7 +50,7 @@ const SingleCard = ({pokename}) => {
 
     return(
         <Fragment>
-            <Card>
+            <Card sx={{backgroundColor: '#edf5f9', borderRadius: '14px', border: '3px solid #ffdd56' }}>
                 <CardActionArea onClick={handleOpen}>
                     <PokeImage urlSprite={pokeInfo.sprites}/>
                     <PokeModal 
